@@ -28,8 +28,10 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const basename = import.meta.env.VITE_BASE_PATH || '/';
+  
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="min-h-screen flex flex-col">
         <ScrollToTop />
         <Navbar />
