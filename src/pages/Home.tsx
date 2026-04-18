@@ -227,21 +227,57 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Mensile */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Esempio Gratis */}
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white p-10 rounded-[40px] border border-gray-100 shadow-sm hover:shadow-xl transition-all"
+              transition={{ duration: 0.6 }}
+              className="bg-white p-8 rounded-[40px] border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
             >
-              <h3 className="text-2xl font-bold mb-4">Mensile</h3>
-              <div className="text-5xl font-black mb-8">€4,99<span className="text-lg text-gray-400 font-medium">/mese</span></div>
-              <ul className="space-y-4 mb-10">
+              <h3 className="text-xl font-bold mb-2">Prova gratuita</h3>
+              <div className="text-gray-400 text-sm mb-6">Singolo mese di esempio</div>
+              <div className="text-4xl font-black mb-8 text-solar-green">Gratis</div>
+              <ul className="space-y-4 mb-10 flex-grow">
                 <li className="flex items-center space-x-3">
                   <CheckCircle2 className="w-5 h-5 text-solar-green" />
-                  <span className="text-gray-600">Disdici quando vuoi</span>
+                  <span className="text-gray-600 text-sm">Analisi tecnica completa</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-green" />
+                  <span className="text-gray-600 text-sm">Sintesi per Professionisti</span>
+                </li>
+              </ul>
+              <a 
+                href="/esempio.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full py-4 border-2 border-solar-blue text-solar-blue font-bold rounded-2xl hover:bg-solar-blue hover:text-white transition-all block text-center"
+              >
+                Mostra esempio
+              </a>
+            </motion.div>
+
+            {/* Mensile */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white p-8 rounded-[40px] border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
+            >
+              <h3 className="text-xl font-bold mb-2">Mensile</h3>
+              <div className="text-gray-400 text-sm mb-6">Abbonamento base</div>
+              <div className="text-4xl font-black mb-8">€4,99<span className="text-lg text-gray-400 font-medium">/mese</span></div>
+              <ul className="space-y-4 mb-10 flex-grow">
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-green" />
+                  <span className="text-gray-600 text-sm">Tutti i report mensili</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-green" />
+                  <span className="text-gray-600 text-sm">Disdici quando vuoi</span>
                 </li>
               </ul>
               <Link 
@@ -254,22 +290,27 @@ export default function Home() {
 
             {/* Annuale */}
             <motion.div 
-              initial={{ opacity: 0, x: 20, scale: 0.95 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1.05 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-solar-blue p-10 rounded-[40px] text-white shadow-2xl shadow-solar-blue/30 relative z-10"
+              className="bg-solar-blue p-8 rounded-[40px] text-white shadow-2xl shadow-solar-blue/30 relative z-10 flex flex-col scale-105"
             >
-              <div className="absolute top-0 right-10 -translate-y-1/2 bg-solar-yellow text-solar-dark px-4 py-1 rounded-full text-sm font-black uppercase tracking-widest">
+              <div className="absolute top-0 right-10 -translate-y-1/2 bg-solar-yellow text-solar-dark px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">
                 Consigliato
               </div>
-              <h3 className="text-2xl font-bold mb-4">Annuale</h3>
-              <div className="text-sm text-white/66 line-through">€59,88</div>
-              <div className="text-5xl font-black mb-2">€49,90<span className="text-lg text-white/60 font-medium">/anno</span></div>
-              <ul className="space-y-4 mb-10">
+              <h3 className="text-xl font-bold mb-2">Annuale</h3>
+              <div className="text-white/60 text-sm mb-6">Risparmio massimo</div>
+              <div className="text-white/66 text-sm line-through">€59,88</div>
+              <div className="text-4xl font-black mb-8 text-white">€49,90<span className="text-lg text-white/60 font-medium">/anno</span></div>
+              <ul className="space-y-4 mb-10 flex-grow">
                 <li className="flex items-center space-x-3">
                   <CheckCircle2 className="w-5 h-5 text-solar-yellow" />
-                  <span>2 Mesi Gratis</span>
+                  <span className="text-sm">Tutti i vantaggi</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-yellow" />
+                  <span className="text-sm">2 Mesi Gratis</span>
                 </li>
               </ul>
               <Link 
@@ -280,6 +321,7 @@ export default function Home() {
               </Link>
             </motion.div>
           </div>
+
         </div>
       </section>
 

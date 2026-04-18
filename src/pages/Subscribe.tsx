@@ -30,11 +30,11 @@ export default function Subscribe() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="glass-card p-8 md:p-12 rounded-[40px] shadow-2xl"
           >
-            <form className="space-y-8">
+            <form className="space-y-8" action="https://formspree.io/f/xdayznew" method="POST">
               {/* Honeypot field */}
               <div className="hidden">
                 <label>Non compilare questo campo se sei umano:</label>
-                <input type="text" name="b_honeypot" tabIndex={-1} autoComplete="off" />
+                <input type="text" name="session" tabIndex={-1} autoComplete="off" />
               </div>
 
               {/* Plan Selection */}
@@ -78,6 +78,7 @@ export default function Subscribe() {
                     <label className="block text-sm font-bold mb-2">Ragione Sociale</label>
                     <input 
                       type="text" 
+                      name="company"
                       placeholder="Nome Azienda S.r.l. (se applicabile)"
                       className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
                     />
@@ -86,6 +87,7 @@ export default function Subscribe() {
                     <label className="block text-sm font-bold mb-2">Partita IVA</label>
                     <input 
                       type="text" 
+                      name="tax_id"
                       placeholder="IT01234567890 (se applicabile)"
                       className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
                     />
@@ -96,6 +98,7 @@ export default function Subscribe() {
                     <label className="block text-sm font-bold mb-2">Codice SDI o PEC</label>
                     <input 
                       type="text" 
+                      name="sdi_pec"
                       placeholder="KRRH6B9 o pec@azienda.it"
                       className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
                     />
@@ -104,6 +107,7 @@ export default function Subscribe() {
                     <label className="block text-sm font-bold mb-2">Indirizzo di Fatturazione</label>
                     <input 
                       type="text" 
+                      name="address"
                       placeholder="Via Roma 1, 00100 Roma (RM)"
                       className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
                     />
@@ -118,6 +122,7 @@ export default function Subscribe() {
                     <label className="block text-sm font-bold mb-2">Nome</label>
                     <input 
                       type="text" 
+                      name="name"
                       placeholder="Il tuo nome"
                       className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
                       required
@@ -127,6 +132,7 @@ export default function Subscribe() {
                     <label className="block text-sm font-bold mb-2">Cognome</label>
                     <input 
                       type="text" 
+                      name="surname"
                       placeholder="Il tuo cognome"
                       className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
                       required
@@ -137,6 +143,7 @@ export default function Subscribe() {
                   <label className="block text-sm font-bold mb-2">Email</label>
                   <input 
                     type="email" 
+                    name="email"
                     placeholder="la_mia@email.it"
                     className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
                     required
@@ -145,7 +152,7 @@ export default function Subscribe() {
               </div>
 
               <div className="pt-4">
-                <button className="w-full py-5 bg-solar-blue text-white rounded-2xl font-bold text-xl hover:bg-solar-dark transition-all shadow-xl shadow-solar-blue/20 flex items-center justify-center group">
+                <button type="submit" className="w-full py-5 bg-solar-blue text-white rounded-2xl font-bold text-xl hover:bg-solar-dark transition-all shadow-xl shadow-solar-blue/20 flex items-center justify-center group">
                   <CreditCard className="mr-3 w-6 h-6" />
                   Procedi all'Attivazione
                   <Send className="ml-3 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
