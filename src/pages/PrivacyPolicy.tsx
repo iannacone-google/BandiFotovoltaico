@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
         </p>
         <h2 className="text-20 font-bold text-solar-dark mt-8">4. I tuoi Diritti</h2>
         <p>
-          Hai il diritto di accedere ai tuoi dati, chiederne la rettifica, la cancellazione o la limitazione del trattamento in qualsiasi momento contattandoci all'indirizzo info@bandifotovoltaico.it.
+          Hai il diritto di accedere ai tuoi dati, chiederne la rettifica, la cancellazione o la limitazione del trattamento in qualsiasi momento contattandoci tramite il form di contatto.
         </p>
       </div>
     </div>

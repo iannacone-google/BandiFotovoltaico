@@ -22,17 +22,18 @@ export default function Contact() {
                 Compila il modulo sottostante e ti risponderemo il prima possibile.
               </p>
             </div>
-            <form className="space-y-6">
+            <form className="space-y-6" action="https://formspree.io/f/mwvaoggb" method="POST">
               {/* Honeypot field */}
               <div className="hidden">
                 <label>Non compilare questo campo se sei umano:</label>
-                <input type="text" name="b_honeypot" tabIndex={-1} autoComplete="off" />
+                <input type="text" name="address" tabIndex={-1} autoComplete="off" />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold mb-2">Nome</label>
                   <input 
+                    name="name"
                     type="text" 
                     placeholder="Il tuo nome"
                     className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
@@ -42,6 +43,7 @@ export default function Contact() {
                 <div>
                   <label className="block text-sm font-bold mb-2">Cognome</label>
                   <input 
+                    name="surname"
                     type="text" 
                     placeholder="Il tuo cognome"
                     className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
@@ -52,6 +54,7 @@ export default function Contact() {
               <div>
                 <label className="block text-sm font-bold mb-2">Email</label>
                 <input 
+                  name="email"
                   type="email" 
                   placeholder="la_mia@email.it"
                   className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none"
@@ -61,13 +64,14 @@ export default function Contact() {
               <div>
                 <label className="block text-sm font-bold mb-2">Messaggio</label>
                 <textarea 
+                  name="message"
                   rows={6}
                   placeholder="Come possiamo aiutarti?"
                   className="w-full px-6 py-4 rounded-2xl bg-solar-light border-transparent focus:bg-white focus:ring-4 focus:ring-solar-blue/10 transition-all outline-none resize-none"
                   required
                 ></textarea>
               </div>
-              <button className="w-full py-5 bg-solar-blue text-white rounded-2xl font-bold text-xl hover:bg-solar-dark transition-all shadow-xl shadow-solar-blue/20 flex items-center justify-center group">
+              <button type="submit" className="w-full py-5 bg-solar-blue text-white rounded-2xl font-bold text-xl hover:bg-solar-dark transition-all shadow-xl shadow-solar-blue/20 flex items-center justify-center group">
                 Invia Messaggio
                 <Send className="ml-2 w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
