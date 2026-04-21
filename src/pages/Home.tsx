@@ -223,12 +223,12 @@ export default function Home() {
           >
             <h2 className="text-4xl lg:text-5xl font-display font-bold mb-6">Piani di Abbonamento</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Prezzo di lancio
+              Prezzi di lancio
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Esempio Gratis */}
+            {/* Base */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -236,89 +236,100 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="bg-white p-8 rounded-[40px] border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
             >
-              <h3 className="text-xl font-bold mb-2">Prova gratuita</h3>
-              <div className="text-gray-400 text-sm mb-6">Singolo mese di esempio</div>
-              <div className="text-4xl font-black mb-8 text-solar-green">Gratis</div>
-              <ul className="space-y-4 mb-10 flex-grow">
-                <li className="flex items-center space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-solar-green" />
-                  <span className="text-gray-600 text-sm">Analisi tecnica completa</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-solar-green" />
-                  <span className="text-gray-600 text-sm">Sintesi per Professionisti</span>
-                </li>
-              </ul>
-              <a 
-                href="/esempio.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <h3 className="text-xl font-bold mb-2">Base</h3>
+              <div className="text-4xl font-black mb-6">2,99 € <span className="text-lg text-gray-400 font-medium">/mese</span></div>
+              <div className="text-gray-400 text-sm mb-6">Potrebbe essere applicata l'IVA. <Link to="/terms" className="focus-visible:outline-none focus-visible:shadow-focus underline-offset-2 hover:underline focus:underline active:underline">Condizioni dell'offerta</Link></div>
+              <Link 
+                to="/abbonati?plan=base"
                 className="w-full py-4 border-2 border-solar-blue text-solar-blue font-bold rounded-2xl hover:bg-solar-blue hover:text-white transition-all block text-center"
               >
-                Mostra esempio
-              </a>
-            </motion.div>
-
-            {/* Mensile */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white p-8 rounded-[40px] border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
-            >
-              <h3 className="text-xl font-bold mb-2">Mensile</h3>
-              <div className="text-gray-400 text-sm mb-6">Abbonamento base</div>
-              <div className="text-4xl font-black mb-8">€4,99<span className="text-lg text-gray-400 font-medium">/mese</span></div>
-              <ul className="space-y-4 mb-10 flex-grow">
+                Abbonati Ora
+              </Link>
+              <ul className="space-y-4 mt-8 flex-grow">
                 <li className="flex items-center space-x-3">
                   <CheckCircle2 className="w-5 h-5 text-solar-green" />
-                  <span className="text-gray-600 text-sm">Tutti i report mensili</span>
+                  <span className="text-gray-600 text-sm">Report mensile</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckCircle2 className="w-5 h-5 text-solar-green" />
                   <span className="text-gray-600 text-sm">Disdici quando vuoi</span>
                 </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-green" />
+                  <span className="text-gray-600 text-sm">Bandi nazionali</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-green" />
+                  <span className="text-gray-600 text-sm">Bandi regionali</span>
+                </li>
               </ul>
-              <Link 
-                to="/abbonati?plan=mensile"
-                className="w-full py-4 border-2 border-solar-blue text-solar-blue font-bold rounded-2xl hover:bg-solar-blue hover:text-white transition-all block text-center"
-              >
-                Abbonati Ora
-              </Link>
             </motion.div>
 
-            {/* Annuale */}
+            {/* Plus */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-solar-blue p-8 rounded-[40px] text-white shadow-2xl shadow-solar-blue/30 relative z-10 flex flex-col scale-105"
             >
               <div className="absolute top-0 right-10 -translate-y-1/2 bg-solar-yellow text-solar-dark px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">
                 Consigliato
               </div>
-              <h3 className="text-xl font-bold mb-2">Annuale</h3>
-              <div className="text-white/60 text-sm mb-6">Risparmio massimo</div>
-              <div className="text-white/66 text-sm line-through">€59,88</div>
-              <div className="text-4xl font-black mb-8 text-white">€49,90<span className="text-lg text-white/60 font-medium">/anno</span></div>
-              <ul className="space-y-4 mb-10 flex-grow">
-                <li className="flex items-center space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-solar-yellow" />
-                  <span className="text-sm">Tutti i vantaggi</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle2 className="w-5 h-5 text-solar-yellow" />
-                  <span className="text-sm">2 Mesi Gratis</span>
-                </li>
-              </ul>
+              <h3 className="text-xl font-bold mb-2 text-white">Plus</h3>
+              <div className="text-white/70 text-sm mb-6">Abbonamento avanzato</div>
+              <div className="text-4xl font-black mb-6 text-white">3,49 € <span className="text-lg text-white/60 font-medium">/mese</span></div>
+              <div className="text-white/60 text-sm mb-6">Potrebbe essere applicata l'IVA. <Link to="/terms" className="focus-visible:outline-none focus-visible:shadow-focus underline-offset-2 hover:underline focus:underline active:underline transition-colors hover:text-solar-yellow">Condizioni dell'offerta</Link></div>
               <Link 
-                to="/abbonati?plan=annuale"
+                to="/abbonati?plan=plus"
                 className="w-full py-4 bg-white text-solar-blue font-bold rounded-2xl hover:bg-solar-yellow hover:text-solar-dark transition-all block text-center"
               >
                 Abbonati Ora
               </Link>
+              <ul className="space-y-4 mt-8 flex-grow">
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-yellow" />
+                  <span className="text-sm">Tutti i vantaggi Base</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-yellow" />
+                  <span className="text-sm">Bandi europei</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-yellow" />
+                  <span className="text-sm">Appalti pubblici</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Ultimate */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-white p-8 rounded-[40px] border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
+            >
+              <h3 className="text-xl font-bold mb-2">Ultimate</h3>
+              <div className="text-gray-400 text-sm mb-6">Abbonamento completo</div>
+              <div className="text-4xl font-black mb-6">6,19 € <span className="text-lg text-gray-400 font-medium">/mese</span></div>
+              <div className="text-gray-400 text-sm mb-6">Potrebbe essere applicata l'IVA. <Link to="/terms" className="focus-visible:outline-none focus-visible:shadow-focus underline-offset-2 hover:underline focus:underline active:underline">Condizioni dell'offerta</Link></div>
+              <Link 
+                to="/abbonati?plan=ultimate"
+                className="w-full py-4 border-2 border-solar-blue text-solar-blue font-bold rounded-2xl hover:bg-solar-blue hover:text-white transition-all block text-center"
+              >
+                Abbonati Ora
+              </Link>
+              <ul className="space-y-4 mt-8 flex-grow">
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-green" />
+                  <span className="text-gray-600 text-sm">Tutti i vantaggi Plus</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-solar-green" />
+                  <span className="text-gray-600 text-sm">Agevolazioni fiscali e meccanismi strutturali</span>
+                </li>
+              </ul>
             </motion.div>
           </div>
 
