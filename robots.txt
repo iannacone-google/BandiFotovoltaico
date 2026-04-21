@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /abbonati
+Disallow: /terms
+Disallow: /privacy
 
 Sitemap: https://bandifotovoltaico.it/sitemap.xml
