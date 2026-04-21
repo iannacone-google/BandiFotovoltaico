@@ -15,23 +15,23 @@ import { Link } from 'react-router-dom';
 const features = [
   {
     icon: <Search className="w-6 h-6" />,
-    title: "Analisi Regionali",
-    description: "Monitoraggio capillare di ogni bando regionale"
+    title: "Monitoraggio Bandi",
+    description: "Analisi quotidiana di bandi regionali (PR FESR), nazionali e incentivi GSE per impianti fotovoltaici"
   },
   {
     icon: <Globe className="w-6 h-6" />,
-    title: "Appalti Nazionali",
-    description: "Appalti pubblici italiani filtrati per rilevanza energetica"
+    title: "Appalti & Gare pubblici",
+    description: "Selezione mirata di gare d'appalto pubbliche per efficientamento energetico e comunità energetiche"
   },
   {
     icon: <TrendingUp className="w-6 h-6" />,
-    title: "Agevolazioni Fiscali",
-    description: "Aggiornamenti costanti su detrazioni, crediti d'imposta e incentivi GSE"
+    title: "Guida Agevolazioni",
+    description: "Focus tecnico su Credito d'Imposta 5.0, Detrazioni e Meccanismi di Scambio sul Posto"
   },
   {
     icon: <ShieldCheck className="w-6 h-6" />,
-    title: "Dati Verificati",
-    description: "Ogni informazione è verificata prima della pubblicazione"
+    title: "Analisi di Vendita",
+    description: "Trasformiamo dati burocratici in argomenti commerciali pronti per i tuoi preventivi solari"
   }
 ];
 
@@ -70,11 +70,11 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl lg:text-7xl font-display font-black mb-8 leading-tight">
-              L'Energia dei Bandi <br />
-              <span className="gradient-text">Nelle Tue Mani</span>
+              <span className="gradient-text">L'Energia dei Bandi<br />
+              Nelle Tue Mani</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Analisi professionale di bandi e agevolazioni per il fotovoltaico e appalti regionali e nazionali. Trasforma la burocrazia in opportunità di vendita
+              Analisi tecnica di bandi europei, nazionali e regionali. Detrazioni, incentivi GSE e appalti pubblici per il settore fotovoltaico. Trasforma la burocrazia in opportunità di vendita
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
@@ -177,32 +177,46 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="bg-solar-blue/20 p-8 rounded-[40px] border border-white/10">
-                <div className="bg-white rounded-3xl p-8 text-solar-dark shadow-2xl">
+              <div className="bg-solar-blue/20 p-8 rounded-[40px] border border-white/10 relative group">
+                <div className="bg-white rounded-3xl p-8 text-solar-dark shadow-2xl relative overflow-hidden">
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center space-x-2">
                       <div className="w-3 h-3 bg-red-400 rounded-full" />
                       <div className="w-3 h-3 bg-yellow-400 rounded-full" />
                       <div className="w-3 h-3 bg-green-400 rounded-full" />
                     </div>
-                    <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">Report Anteprima</div>
+                    <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">Anteprima Report Tecnico</div>
                   </div>
                   <div className="space-y-6">
                     <div className="h-4 bg-gray-100 rounded-full w-3/4" />
                     <div className="h-4 bg-gray-100 rounded-full w-full" />
                     <div className="h-4 bg-gray-100 rounded-full w-5/6" />
+                    
                     <div className="pt-6 border-t border-gray-100">
                       <div className="flex items-center space-x-4 mb-4">
                         <div className="w-10 h-10 bg-solar-yellow rounded-lg flex items-center justify-center">
                           <Zap className="w-5 h-5 text-solar-dark" />
                         </div>
                         <div>
-                          <div className="text-sm font-bold">Bando Regionale 2026</div>
-                          <div className="text-xs text-solar-green font-bold">Attivo - €2.5M</div>
+                          <div className="text-sm font-bold">Bando Regionale Puglia 2024</div>
+                          <div className="text-xs text-solar-green font-bold">Dotazione: €15M</div>
                         </div>
                       </div>
-                      <div className="h-20 bg-solar-light rounded-xl" />
+                      <div className="h-24 bg-solar-light rounded-xl p-4">
+                        <div className="w-full h-2 bg-gray-200 rounded-full mb-2" />
+                        <div className="w-2/3 h-2 bg-gray-200 rounded-full" />
+                      </div>
                     </div>
+                  </div>
+
+                  <div className="absolute inset-0 bg-solar-blue/5 backdrop-blur-[2px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <a 
+                      href="/sample-report.pdf" 
+                      className="bg-solar-blue text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transform -translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-2xl"
+                    >
+                      Scarica Esempio Completo
+                      <FileText className="w-5 h-5" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -238,7 +252,7 @@ export default function Home() {
             >
               <h3 className="text-xl font-bold mb-2">Base</h3>
               <div className="text-4xl font-black mb-6">2,99 € <span className="text-lg text-gray-400 font-medium">/mese</span></div>
-              <div className="text-gray-400 text-sm mb-6">Potrebbe essere applicata l'IVA. <Link to="/terms" className="focus-visible:outline-none focus-visible:shadow-focus underline-offset-2 hover:underline focus:underline active:underline">Condizioni dell'offerta</Link></div>
+              <div className="text-gray-400 text-sm mb-6">Potrebbe essere applicata l'IVA. <Link to="/terms" className="focus-visible:outline-none focus-visible:shadow-focus underline-offset-2 hover:underline focus:underline active:underline transition-colors hover:text-solar-blue">Condizioni dell'offerta</Link></div>
               <Link 
                 to="/abbonati?plan=base"
                 className="w-full py-4 border-2 border-solar-blue text-solar-blue font-bold rounded-2xl hover:bg-solar-blue hover:text-white transition-all block text-center"
@@ -277,7 +291,6 @@ export default function Home() {
                 Consigliato
               </div>
               <h3 className="text-xl font-bold mb-2 text-white">Plus</h3>
-              <div className="text-white/70 text-sm mb-6">Abbonamento avanzato</div>
               <div className="text-4xl font-black mb-6 text-white">3,49 € <span className="text-lg text-white/60 font-medium">/mese</span></div>
               <div className="text-white/60 text-sm mb-6">Potrebbe essere applicata l'IVA. <Link to="/terms" className="focus-visible:outline-none focus-visible:shadow-focus underline-offset-2 hover:underline focus:underline active:underline transition-colors hover:text-solar-yellow">Condizioni dell'offerta</Link></div>
               <Link 
@@ -311,9 +324,8 @@ export default function Home() {
               className="bg-white p-8 rounded-[40px] border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
             >
               <h3 className="text-xl font-bold mb-2">Ultimate</h3>
-              <div className="text-gray-400 text-sm mb-6">Abbonamento completo</div>
               <div className="text-4xl font-black mb-6">6,19 € <span className="text-lg text-gray-400 font-medium">/mese</span></div>
-              <div className="text-gray-400 text-sm mb-6">Potrebbe essere applicata l'IVA. <Link to="/terms" className="focus-visible:outline-none focus-visible:shadow-focus underline-offset-2 hover:underline focus:underline active:underline">Condizioni dell'offerta</Link></div>
+              <div className="text-gray-400 text-sm mb-6">Potrebbe essere applicata l'IVA. <Link to="/terms" className="focus-visible:outline-none focus-visible:shadow-focus underline-offset-2 hover:underline focus:underline active:underline transition-colors hover:text-solar-blue">Condizioni dell'offerta</Link></div>
               <Link 
                 to="/abbonati?plan=ultimate"
                 className="w-full py-4 border-2 border-solar-blue text-solar-blue font-bold rounded-2xl hover:bg-solar-blue hover:text-white transition-all block text-center"

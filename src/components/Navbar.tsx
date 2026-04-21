@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { Logo } from './Logo';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +12,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-solar-yellow p-2 rounded-lg group-hover:rotate-12 transition-transform duration-300">
-              <Sun className="w-6 h-6 text-solar-dark" />
-            </div>
+            <Logo className="w-12 h-12 group-hover:scale-105 transition-transform duration-300 rounded-xl" />
             <span className="text-xl font-display font-bold text-solar-blue">
               Bandi <span className="text-solar-green">Fotovoltaico</span>
             </span>

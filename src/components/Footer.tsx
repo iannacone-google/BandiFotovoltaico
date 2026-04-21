@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Sun, Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Logo } from './Logo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <Sun className="w-8 h-8 text-solar-yellow" />
+              <Logo className="w-12 h-12 bg-white rounded-xl p-1" />
               <span className="text-2xl font-display font-bold">
                 Bandi <span className="text-solar-green">Fotovoltaico</span>
               </span>
